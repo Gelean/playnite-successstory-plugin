@@ -295,7 +295,7 @@ namespace SuccessStory.Clients
             string achievementsUrl = GetAchievementsPageUrl(gameAchievements, source);
             if (achievementsUrl.IsNullOrEmpty())
             {
-                logger.Warn($"No Exophase (rarity) url find for {gameAchievements.Name} - {gameAchievements.Id}");
+                logger.Warn($"No Exophase (rarity) url found for {gameAchievements.Name} - {gameAchievements.Id}");
                 return;
             }
 
@@ -338,7 +338,7 @@ namespace SuccessStory.Clients
             string achievementsUrl = GetAchievementsPageUrl(gameAchievements, source);
             if (achievementsUrl.IsNullOrEmpty())
             {
-                logger.Warn($"No Exophase (description) url find for {gameAchievements.Name} - {gameAchievements.Id}");
+                logger.Warn($"No Exophase (description) url found for {gameAchievements.Name} - {gameAchievements.Id}");
                 return;
             }
 

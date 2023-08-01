@@ -288,11 +288,11 @@ namespace SuccessStory.Services
 
             if (!(gameAchievements?.HasAchievements ?? false))
             {
-                logger.Info($"No achievements find for {game.Name} - {game.Id}");
+                logger.Info($"No achievements found for {game.Name} - {game.Id}");
             }
             else
             {
-                logger.Info($"Find {gameAchievements.Total} achievements find for {game.Name} - {game.Id}");
+                logger.Info($"Found {gameAchievements.Total} achievements for {game.Name} - {game.Id}");
             }
 
             return gameAchievements;
@@ -984,7 +984,7 @@ namespace SuccessStory.Services
                 return achievementProvider.ValidateConfiguration();
             }
 
-            Common.LogDebug(true, $"VerifToAddOrShow() find no action for {achievementSource}");
+            Common.LogDebug(true, $"VerifToAddOrShow() found no action for {achievementSource}");
             return false;
         }
         public bool VerifAchievementsLoad(Guid gameID)
@@ -1060,10 +1060,10 @@ namespace SuccessStory.Services
                     webItem = SetEstimateTimeToUnlock(game, webItem);
                     for (int i = 0; i < webItem.Items.Count; i++)
                     {
-                        Achievements finded = loadedItem.Items.Find(x => (x.ApiName.IsNullOrEmpty() ? true : x.ApiName.IsEqual(webItem.Items[i].ApiName)) && x.Name.IsEqual(webItem.Items[i].Name));
-                        if (finded != null)
+                        Achievements found = loadedItem.Items.Find(x => (x.ApiName.IsNullOrEmpty() ? true : x.ApiName.IsEqual(webItem.Items[i].ApiName)) && x.Name.IsEqual(webItem.Items[i].Name));
+                        if (found != null)
                         {
-                            webItem.Items[i].DateUnlocked = finded.DateUnlocked;
+                            webItem.Items[i].DateUnlocked = found.DateUnlocked;
                         }
                     }
                 }

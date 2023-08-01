@@ -135,8 +135,8 @@ namespace SuccessStory.Views
                 API.Instance.Database.Platforms.ForEach(x =>
                 {
                     int RaConsoleId = RetroAchievements.FindConsole(x.Name);
-                    Models.Platform Finded = y.Platforms.Find(z => z.Id == x.Id);
-                    if (Finded == null)
+                    Models.Platform found = y.Platforms.Find(z => z.Id == x.Id);
+                    if (found == null)
                     {
                         y.Platforms.Add(new Models.Platform { Id = x.Id });
                     }

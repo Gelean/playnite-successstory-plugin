@@ -125,13 +125,13 @@ namespace SuccessStory.Clients
 
                 gameAchievementsCached.Items.ForEach(x =>
                 {
-                    Achievements finded = data.Achievements.Find(y => x.ApiName == y.ApiName);
-                    if (finded != null)
+                    Achievements found = data.Achievements.Find(y => x.ApiName == y.ApiName);
+                    if (found != null)
                     {
-                        x.Name = finded.Name;
+                        x.Name = found.Name;
                         if (x.DateUnlocked == null || x.DateUnlocked == default(DateTime))
                         {
-                            x.DateUnlocked = finded.DateUnlocked;
+                            x.DateUnlocked = found.DateUnlocked;
                         }
                     }
                 });
@@ -821,8 +821,8 @@ namespace SuccessStory.Clients
                         default:
                             if (ReturnAchievements.Count == 0)
                             {
-                                Folder finded = PluginDatabase.PluginSettings.Settings.LocalPath.Find(x => x.FolderPath.IsEqual(DirAchivements));
-                                Guid.TryParse(finded?.GameId, out Guid GameId);
+                                Folder found = PluginDatabase.PluginSettings.Settings.LocalPath.Find(x => x.FolderPath.IsEqual(DirAchivements));
+                                Guid.TryParse(found?.GameId, out Guid GameId);
 
                                 if (File.Exists(DirAchivements + "\\user_stats.ini")) 
                                 {
@@ -842,7 +842,7 @@ namespace SuccessStory.Clients
                                             }
 
                                         }
-                                        else if (GameId != default(Guid) && GameId == game.Id && (finded?.HasGame ?? false))
+                                        else if (GameId != default(Guid) && GameId == game.Id && (found?.HasGame ?? false))
                                         {
                                             if (File.Exists(DirAchivements + $"\\stats\\achievements.ini"))
                                             {
@@ -928,7 +928,7 @@ namespace SuccessStory.Clients
 
                     for (int i = 0; i < resultItems?.Count; i++)
                     {
-                        bool isFind = false;
+                        bool isFound = false;
                         for (int j = 0; j < ReturnAchievements.Count; j++)
                         {
                             if (ReturnAchievements[j].ApiName.IsEqual(((string)resultItems[i]["name"])))
@@ -943,13 +943,13 @@ namespace SuccessStory.Clients
                                     DateUnlocked = ReturnAchievements[j].DateUnlocked
                                 };
 
-                                isFind = true;
+                                isFound = true;
                                 ReturnAchievements[j] = temp;
                                 j = ReturnAchievements.Count;
                             }
                         }
 
-                        if (!isFind)
+                        if (!isFound)
                         {
                             ReturnAchievements.Add(new Achievements
                             {
@@ -967,7 +967,7 @@ namespace SuccessStory.Clients
                     {
                         for (int i = 0; i < resultItemsStats?.Count; i++)
                         {
-                            bool isFind = false;
+                            bool isFound = false;
                             for (int j = 0; j < ReturnStats.Count; j++)
                             {
                                 if (ReturnStats[j].Name.IsEqual(((string)resultItemsStats[i]["name"])))
@@ -978,7 +978,7 @@ namespace SuccessStory.Clients
                                         Value = ReturnStats[j].Value
                                     };
 
-                                    isFind = true;
+                                    isFound = true;
                                     ReturnStats[j] = temp;
                                     j = ReturnStats.Count;
                                 }

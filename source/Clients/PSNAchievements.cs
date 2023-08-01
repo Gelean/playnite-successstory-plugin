@@ -112,7 +112,7 @@ namespace SuccessStory.Clients
                                 }
                                 else
                                 {
-                                    logger.Warn($"No trohpies find for {game.Name} - {GameId}");
+                                    logger.Warn($"No trohpies found for {game.Name} - {GameId}");
                                     gameAchievements.Items = AllAchievements;
                                     return gameAchievements;
                                 }
@@ -144,7 +144,7 @@ namespace SuccessStory.Clients
                     }
                     catch
                     {
-                        logger.Warn($"No trophiesDetails find for {game.Name} - {GameId}");
+                        logger.Warn($"No trophiesDetails found for {game.Name} - {GameId}");
                         gameAchievements.Items = AllAchievements;
                         return gameAchievements;
                     }
@@ -271,10 +271,10 @@ namespace SuccessStory.Clients
 
         public string GetNPWR(string Name)
         {
-            IEnumerable<PSN_NPWR> finded = PSN_NPWR_LIST.NPWR_LIST.Where(x => CommonPluginsShared.PlayniteTools.NormalizeGameName(x.Name).IsEqual(CommonPluginsShared.PlayniteTools.NormalizeGameName(Name)));
-            if (finded?.Count() > 0)
+            IEnumerable<PSN_NPWR> found = PSN_NPWR_LIST.NPWR_LIST.Where(x => CommonPluginsShared.PlayniteTools.NormalizeGameName(x.Name).IsEqual(CommonPluginsShared.PlayniteTools.NormalizeGameName(Name)));
+            if (found?.Count() > 0)
             {
-                return finded.First().NPWR;
+                return found.First().NPWR;
             }
 
             return string.Empty;

@@ -1112,7 +1112,7 @@ namespace SuccessStory.Clients
                         }
                         else
                         {
-                            logger.Warn($"not find for {AppId} - ApiName: {ApiName} - Percent: {Percent}");
+                            logger.Warn($"not found for {AppId} - ApiName: {ApiName} - Percent: {Percent}");
                         }
                     }
                 }
@@ -1404,10 +1404,10 @@ namespace SuccessStory.Clients
                             double.TryParse(steamAchievementData.Progress["max_val"].ToString(), out double max);
                             double.TryParse(steamAchievementData.Progress["currentVal"].ToString(), out double val);
 
-                            var finded = Achievements.Find(x => x.ApiName.IsEqual(steamAchievementData.RawName));
-                            if (finded != null)
+                            var found = Achievements.Find(x => x.ApiName.IsEqual(steamAchievementData.RawName));
+                            if (found != null)
                             {
-                                finded.Progression = new AchProgression
+                                found.Progression = new AchProgression
                                 {
                                     Min = min,
                                     Max = max,
@@ -1429,10 +1429,10 @@ namespace SuccessStory.Clients
                             double.TryParse(steamAchievementData.Progress["max_val"].ToString(), out double max);
                             double.TryParse(steamAchievementData.Progress["currentVal"].ToString(), out double val);
 
-                            var finded = Achievements.Find(x => x.ApiName.IsEqual(steamAchievementData.RawName));
-                            if (finded != null)
+                            var found = Achievements.Find(x => x.ApiName.IsEqual(steamAchievementData.RawName));
+                            if (found != null)
                             {
-                                finded.Progression = new AchProgression
+                                found.Progression = new AchProgression
                                 {
                                     Min = min,
                                     Max = max,

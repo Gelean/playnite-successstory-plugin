@@ -180,8 +180,8 @@ namespace SuccessStory
                                     {
                                         icon = TransformIcon.Get(x) + " ";
 
-                                        var finded = FilterSourceItems.Where(y => y.SourceNameShort.IsEqual(x)).FirstOrDefault();
-                                        if (finded == null)
+                                        var found = FilterSourceItems.Where(y => y.SourceNameShort.IsEqual(x)).FirstOrDefault();
+                                        if (found == null)
                                         {
                                             FilterSourceItems.Add(new ListSource { SourceName = ((icon.Length == 2) ? icon : string.Empty) + x, SourceNameShort = x, IsCheck = false });
                                         }
@@ -254,8 +254,8 @@ namespace SuccessStory
                                 {
                                     icon = TransformIcon.Get(x) + " ";
 
-                                    var finded = FilterSourceItems.Where(y => y.SourceNameShort.IsEqual(x)).FirstOrDefault();
-                                    if (finded == null)
+                                    var found = FilterSourceItems.Where(y => y.SourceNameShort.IsEqual(x)).FirstOrDefault();
+                                    if (found == null)
                                     {
                                         FilterSourceItems.Add(new ListSource { SourceName = ((icon.Length == 2) ? icon : string.Empty) + x, SourceNameShort = x, IsCheck = false });
                                     }

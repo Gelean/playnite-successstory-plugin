@@ -473,12 +473,12 @@ namespace SuccessStory.Clients
             }
             else
             {
-                logger.Warn($"No console find for {GameName} with {PlatformName}");
+                logger.Warn($"No console found for {GameName} with {PlatformName}");
             }
 
             if (gameID == 0)
             {
-                logger.Warn($"No game find for {GameName} with {PlatformName} in {consoleID}");
+                logger.Warn($"No game found for {GameName} with {PlatformName} in {consoleID}");
             }
 
             return gameID;
@@ -546,7 +546,7 @@ namespace SuccessStory.Clients
                 }
                 if (GameId == 0)
                 {
-                    logger.Warn($"No game find for {game.Name} with {HashMD5} in PlatformType.NDS");
+                    logger.Warn($"No game found for {game.Name} with {HashMD5} in PlatformType.NDS");
                 }
             }
 
@@ -560,7 +560,7 @@ namespace SuccessStory.Clients
             }
             if (GameId == 0)
             {
-                logger.Warn($"No game find for {game.Name} with {HashMD5} in PlatformType.All");
+                logger.Warn($"No game found for {game.Name} with {HashMD5} in PlatformType.All");
             }
 
             HashMD5 = GetHash(FilePath, PlatformType.SNES);
@@ -573,7 +573,7 @@ namespace SuccessStory.Clients
             }
             if (GameId == 0)
             {
-                logger.Warn($"No game find for {game.Name} with {HashMD5} in PlatformType.SNES");
+                logger.Warn($"No game found for {game.Name} with {HashMD5} in PlatformType.SNES");
             }
 
             HashMD5 = GetHash(FilePath, PlatformType.NES);
@@ -586,7 +586,7 @@ namespace SuccessStory.Clients
             }
             if (GameId == 0)
             {
-                logger.Warn($"No game find for {game.Name} with {HashMD5} in PlatformType.SNES");
+                logger.Warn($"No game found for {game.Name} with {HashMD5} in PlatformType.SNES");
             }
 
             HashMD5 = GetHash(FilePath, PlatformType.Arcade);
@@ -599,7 +599,7 @@ namespace SuccessStory.Clients
             }
             if (GameId == 0)
             {
-                logger.Warn($"No game find for {game.Name} with {HashMD5} in PlatformType.Sega_CD_Saturn");
+                logger.Warn($"No game found for {game.Name} with {HashMD5} in PlatformType.Sega_CD_Saturn");
             }
 
             HashMD5 = GetHash(FilePath, PlatformType.Famicom);
@@ -612,7 +612,7 @@ namespace SuccessStory.Clients
             }
             if (GameId == 0)
             {
-                logger.Warn($"No game find for {game.Name} with {HashMD5} in PlatformType.SNES");
+                logger.Warn($"No game found for {game.Name} with {HashMD5} in PlatformType.SNES");
             }
 
             HashMD5 = GetHash(FilePath, PlatformType.Sega_CD_Saturn);
@@ -625,7 +625,7 @@ namespace SuccessStory.Clients
             }
             if (GameId == 0)
             {
-                logger.Warn($"No game find for {game.Name} with {HashMD5} in PlatformType.Sega_CD_Saturn");
+                logger.Warn($"No game found for {game.Name} with {HashMD5} in PlatformType.Sega_CD_Saturn");
             }
 
             ZipFileManafeRemove();

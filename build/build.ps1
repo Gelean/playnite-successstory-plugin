@@ -68,7 +68,7 @@ if ($ConfigurationName -eq "release")
 		}
 		else 
 		{
-			echo "toolbox.exe not find."
+			echo "toolbox.exe not found."
 		}	
 	}
 	else
